@@ -1,5 +1,6 @@
 package alura.spring.boot.api.entities.physician;
 
+import alura.spring.boot.api.dto.physician.CreatePhysicianDto;
 import alura.spring.boot.api.entities.address.Address;
 import alura.spring.boot.api.enums.Specialty;
 import jakarta.persistence.*;
@@ -37,5 +38,13 @@ public class Physician {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    public Physician(CreatePhysicianDto dto) {
+        this.name = dto.name();
+        this.email = dto.email();
+        this.code = dto.code();
+        this.specialty = dto.specialty();
+        this.address = new Address(dto.address());
     }
 }

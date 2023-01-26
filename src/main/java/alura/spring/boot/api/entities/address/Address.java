@@ -1,5 +1,6 @@
 package alura.spring.boot.api.entities.address;
 
+import alura.spring.boot.api.dto.address.CreateAddressDto;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -18,4 +19,14 @@ public class Address {
     private String state;
     private String adjunct;
     private String houseNumber;
+
+    public Address(CreateAddressDto dto) {
+        this.street = dto.street();
+        this.district = dto.district();
+        this.zipCode = dto.zipCode();
+        this.city = dto.city();
+        this.state = dto.state();
+        this.adjunct = dto.adjunct();
+        this.houseNumber = dto.houseNumber();
+    }
 }
