@@ -15,6 +15,8 @@ public record CreatePhysicianDto(
         @Email
         String email,
         @NotBlank
+        String phoneNumber,
+        @NotBlank
         @Pattern(regexp = "\\d{4,6}")
         String code,
         @NotNull

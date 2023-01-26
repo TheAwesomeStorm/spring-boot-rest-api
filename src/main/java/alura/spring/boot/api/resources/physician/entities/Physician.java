@@ -21,6 +21,7 @@ public class Physician {
     private Long id;
     private String name;
     private String email;
+    private String phoneNumber;
     private String code;
     @Enumerated(EnumType.STRING)
     private Specialty specialty;
@@ -43,6 +44,7 @@ public class Physician {
     public Physician(CreatePhysicianDto dto) {
         this.name = dto.name();
         this.email = dto.email();
+        this.phoneNumber = dto.phoneNumber();
         this.code = dto.code();
         this.specialty = dto.specialty();
         this.address = new Address(dto.address());
