@@ -1,8 +1,8 @@
-package alura.spring.boot.api.entities.physician;
+package alura.spring.boot.api.resources.physician.entities;
 
-import alura.spring.boot.api.dto.physician.CreatePhysicianDto;
-import alura.spring.boot.api.entities.address.Address;
-import alura.spring.boot.api.enums.Specialty;
+import alura.spring.boot.api.resources.address.entities.Address;
+import alura.spring.boot.api.resources.enums.Specialty;
+import alura.spring.boot.api.resources.physician.dto.CreatePhysicianDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

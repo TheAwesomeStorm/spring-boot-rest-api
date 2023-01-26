@@ -1,9 +1,8 @@
-package alura.spring.boot.api.entities.address;
+package alura.spring.boot.api.resources.address.entities;
 
-import alura.spring.boot.api.dto.address.CreateAddressDto;
+import alura.spring.boot.api.resources.address.dto.CreateAddressDto;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package alura.spring.boot.api.enums;
+package alura.spring.boot.api.resources.enums;
 
 public enum Specialty {
     CARDIOLOGY,

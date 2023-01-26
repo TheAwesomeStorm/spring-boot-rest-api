@@ -1,8 +1,7 @@
-package alura.spring.boot.api.controllers;
+package alura.spring.boot.api.resources.physician;
 
-import alura.spring.boot.api.dto.physician.CreatePhysicianDto;
-import alura.spring.boot.api.entities.physician.Physician;
-import alura.spring.boot.api.repositories.PhysicianRepository;
+import alura.spring.boot.api.resources.physician.dto.CreatePhysicianDto;
+import alura.spring.boot.api.resources.physician.entities.Physician;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,6 +1,6 @@
-package alura.spring.boot.api.controllers;
+package alura.spring.boot.api.resources.patient;
 
-import alura.spring.boot.api.dto.patient.CreatePatientDto;
+import alura.spring.boot.api.resources.patient.dto.CreatePatientDto;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
