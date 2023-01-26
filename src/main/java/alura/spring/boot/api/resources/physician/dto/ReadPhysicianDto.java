@@ -1,6 +1,6 @@
 package alura.spring.boot.api.resources.physician.dto;
 
-import alura.spring.boot.api.resources.enums.Specialty;
+import alura.spring.boot.api.resources.physician.enums.Specialty;
 import alura.spring.boot.api.resources.physician.entities.Physician;
 
 public record ReadPhysicianDto(

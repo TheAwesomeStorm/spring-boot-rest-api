@@ -1,7 +1,7 @@
 package alura.spring.boot.api.resources.physician.dto;
 
 import alura.spring.boot.api.resources.address.dto.CreateAddressDto;
-import alura.spring.boot.api.resources.enums.Specialty;
+import alura.spring.boot.api.resources.physician.enums.Specialty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
