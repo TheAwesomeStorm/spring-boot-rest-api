@@ -6,9 +6,10 @@ import alura.spring.boot.api.resources.physician.entities.Physician;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/physicians")
@@ -22,7 +23,7 @@ public class PhysicianController {
     }
 
     @GetMapping
-    public List<ReadPhysicianDto> readAllPhysicians() {
-        return repository.findAll().stream().map(ReadPhysicianDto::new).toList();
+    public Page<ReadPhysicianDto> readAllPhysicians(@PageableDefault(size = 5, sort = {"name"}) Pageable pagination) {
+        return repository.findAll(pagination).map(ReadPhysicianDto::new);
     }
 }
