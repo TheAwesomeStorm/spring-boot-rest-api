@@ -2,6 +2,7 @@ package alura.spring.boot.api.resources.physician;
 
 import alura.spring.boot.api.resources.physician.dto.CreatePhysicianDto;
 import alura.spring.boot.api.resources.physician.dto.ReadPhysicianDto;
+import alura.spring.boot.api.resources.physician.dto.UpdatePhysicianDto;
 import alura.spring.boot.api.resources.physician.entities.Physician;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -25,5 +26,12 @@ public class PhysicianController {
     @GetMapping
     public Page<ReadPhysicianDto> readAllPhysicians(@PageableDefault(size = 5, sort = {"name"}) Pageable pagination) {
         return repository.findAll(pagination).map(ReadPhysicianDto::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void updatePhysician(@RequestBody UpdatePhysicianDto dto) {
+        var physician = repository.getReferenceById(dto.id());
+        physician.updateInformations(dto);
     }
 }

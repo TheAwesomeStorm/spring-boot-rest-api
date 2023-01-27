@@ -1,6 +1,7 @@
 package alura.spring.boot.api.resources.physician.entities;
 
 import alura.spring.boot.api.resources.address.entities.Address;
+import alura.spring.boot.api.resources.physician.dto.UpdatePhysicianDto;
 import alura.spring.boot.api.resources.physician.enums.Specialty;
 import alura.spring.boot.api.resources.physician.dto.CreatePhysicianDto;
 import jakarta.persistence.*;
@@ -27,6 +28,12 @@ public class Physician {
     private Specialty specialty;
     @Embedded
     private Address address;
+
+    public void updateInformations(UpdatePhysicianDto dto) {
+        if (dto.name() != null) this.name = dto.name();
+        if (dto.phoneNumber() != null) this.phoneNumber = dto.phoneNumber();
+        if (dto.address() != null) this.address.updateAddress(dto.address());
+    }
 
     @Override
     public boolean equals(Object o) {

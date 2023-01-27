@@ -1,6 +1,6 @@
 package alura.spring.boot.api.resources.physician.dto;
 
-import alura.spring.boot.api.resources.address.dto.CreateAddressDto;
+import alura.spring.boot.api.resources.address.dto.WriteAddressDto;
 import alura.spring.boot.api.resources.physician.enums.Specialty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -23,5 +23,5 @@ public record CreatePhysicianDto(
         Specialty specialty,
         @NotNull
         @Valid
-        CreateAddressDto address
+        WriteAddressDto address
 ) {}
