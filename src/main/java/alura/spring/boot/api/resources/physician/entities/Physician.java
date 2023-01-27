@@ -28,11 +28,16 @@ public class Physician {
     private Specialty specialty;
     @Embedded
     private Address address;
+    private Boolean enabled;
 
     public void updateInformations(UpdatePhysicianDto dto) {
         if (dto.name() != null) this.name = dto.name();
         if (dto.phoneNumber() != null) this.phoneNumber = dto.phoneNumber();
         if (dto.address() != null) this.address.updateAddress(dto.address());
+    }
+
+    public void logicalDelete() {
+        this.enabled = false;
     }
 
     @Override
@@ -55,5 +60,6 @@ public class Physician {
         this.code = dto.code();
         this.specialty = dto.specialty();
         this.address = new Address(dto.address());
+        this.enabled = true;
     }
 }
